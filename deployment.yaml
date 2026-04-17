@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xyz-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xyz
+  template:
+    metadata:
+      labels:
+        app: xyz
+    spec:
+      containers:
+      - name: xyz-container
+        image: your-dockerhub-username/xyz-app:latest
+        imagePullPolicy: Always
